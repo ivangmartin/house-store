@@ -8,8 +8,6 @@ import {
 } from 'common/middlewares';
 import { housesApi } from 'pods/house';
 
-console.log('LLEGA');
-
 const restApiServer = createRestApiServer();
 
 const staticFilesPath = path.resolve(__dirname, envConstants.STATIC_FILES_PATH);
