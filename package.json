@@ -11,7 +11,10 @@
     "start:local-db": "sudo docker-compose up -d || echo \"Fail running docker-compose up, do it manually!\"",
     "remove:local-db": "sudo docker-compose down || echo \"Fail running docker-compose down, do it manually!\"",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch"
+    "type-check:watch": "npm run type-check -- --watch",
+    "clean": "rimraf dist",
+    "build": "npm run type-check && npm run clean && npm run build:prod",
+    "build:prod": "cross-env NODE_ENV=production babel src -d dist --extensions \".ts\""
   },
   "keywords": [],
   "author": "",
