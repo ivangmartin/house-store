@@ -10,7 +10,7 @@ RUN npm run build
 
 # Release
 FROM base AS release
-COPY --from=back-build /usr/app/dist ./
+COPY --from=back-build /usr/app/dist ./public
 COPY ./package.json ./
 COPY ./package-lock.json ./
 RUN npm ci --only=production
