@@ -16,7 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Login heroku app Docker registry
-        run: heroku container:login
+        run: |
+          curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+          heroku container:login
+        # run: heroku container:login
       - name: Build docker image
         run: docker build -t ${{ env.IMAGE_NAME }} .
       - name: Deploy docker image
