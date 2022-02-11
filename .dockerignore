@@ -1,7 +1,6 @@
 node_modules
 dist
 mongo-data
-public
 .editorconfig
 .env
 .env.example
@@ -10,8 +9,3 @@ public
 create-dev-env.sh
 docker-compose.yml
 globalConfig.json
-
-front/node_modules
-front/dist
-front/.editorconfig
-front/.gitignore
